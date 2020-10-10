@@ -1,0 +1,123 @@
+/* HEADER */
+header {
+    background-color: palevioletred;
+    color: white;
+    text-align: center;
+    padding: 10px
+}
+/* SEARCH BAR */
+#searchForm {
+    margin: auto;
+    width: 47%;
+    border: solid palevioletred 3px;
+    background-color: mistyrose;
+    margin-top: 20px;
+    width: 350px;
+    border-radius: 10px;
+}
+form {
+    margin: 10px;
+}
+.search {
+    background-color: palevioletred;
+    color: white;
+    border-color: palevioletred;
+    outline: palevioletred;
+}
+#icon {
+    background-color: palevioletred;
+    color: white;
+}
+#buttonSearch {
+    background-color: palevioletred;
+    outline: solid white;
+    border-color: palevioletred;
+}
+#recent {
+    padding: 10px;
+    list-style: none;
+}
+#recent li {
+    padding: 10px;
+   width: 300px;
+   height: 50px;
+   margin: 3px;
+   text-decoration: none;
+   list-style: none;
+   border-radius: 10px;
+   background-color: palevioletred;
+}
+/* DAY FORCAST */
+.dayForcast {
+    margin: auto;
+    margin-top: 20px;
+    width: 700px;
+    height: 300px;
+    background-color: mistyrose;
+    border-radius: 20px;
+}
+/* 5 DAY FORCAST */
+.fiveDayForcast {
+    margin: auto;
+    margin-top: 20px;
+    width: 700px;
+    height: 300px;
+    background-color: mistyrose;
+    border-radius: 20px;
+}
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: palevioletred;
+    height: 50px;
+}
+@media screen and (min-width: 800px) {
+    main {
+        margin-right: 50px;
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    #searchForm {
+        bottom: 0px;
+        grid-column: 1;
+        float: left;
+        margin-top: 0px;
+        background-color: mistyrose;
+        height: 90vh;
+        border-radius: 0%;
+        border-top: none;
+        border-bottom: none;
+        border-left: none;
+    }
+    form {
+        margin-top: 30px;
+    }
+    .articles {
+        grid-column: 2;
+        grid-template-rows: 1fr 1fr;
+    }
+    .dayForcast {
+        /* grid-column: 2; */
+        width: 90%;
+        float: right;
+    }
+    .fiveDayForcast {
+        /* grid-column: 2; */
+        width: 90%;
+        float: right;
+    }
+}
+@media screen and (max-height: 400px) {
+    #searchForm {
+        min-height: 500px;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    #searchForm {
+        min-height: 800px;
+    }
+}
