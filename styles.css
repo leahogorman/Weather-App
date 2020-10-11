@@ -56,6 +56,9 @@ form {
     background-color: mistyrose;
     border-radius: 20px;
 }
+.information {
+    padding-left: 20px;
+}
 /* 5 DAY FORCAST */
 .fiveDayForcast {
     margin: auto;
