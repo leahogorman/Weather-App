@@ -1,16 +1,31 @@
+body {
+    background-color: lavenderblush;
+}
 /* HEADER */
 header {
+    display: grid;
+    grid-template-columns: 1fr 200px;
     background-color: palevioletred;
-    color: white;
+    color: lavenderblush;
     text-align: center;
-    padding: 10px
+    padding: 10px;
+}
+.header {
+    margin-left: 200px;
+}
+#date {
+    grid-column: 2;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    padding-top: 5px;
 }
 /* SEARCH BAR */
 #searchForm {
     margin: auto;
     width: 47%;
     border: solid palevioletred 3px;
-    background-color: mistyrose;
+    background-color: lavenderblush;
     margin-top: 20px;
     width: 350px;
     border-radius: 10px;
@@ -20,17 +35,17 @@ form {
 }
 .search {
     background-color: palevioletred;
-    color: white;
+    color: lavenderblush;
     border-color: palevioletred;
     outline: palevioletred;
 }
 #icon {
     background-color: palevioletred;
-    color: white;
+    color: ghostwhite;
 }
 #buttonSearch {
     background-color: palevioletred;
-    outline: solid white;
+    outline: solid lavenderblush;
     border-color: palevioletred;
 }
 #recent {
@@ -57,7 +72,16 @@ form {
     border-radius: 20px;
 }
 .information {
-    padding-left: 20px;
+    padding: 20px;
+    padding-left: 40px;
+}
+.important{
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: 50px 70px;
+}
+.less-important {
+    margin-left: 30px;
 }
 /* 5 DAY FORCAST */
 .fiveDayForcast {
@@ -66,7 +90,18 @@ form {
     width: 700px;
     height: 300px;
     background-color: mistyrose;
+    border: solid mistyrose 10px;
     border-radius: 20px;
+    overflow: auto;
+    white-space: nowrap;
+}
+.fiveDays {
+    display: inline-block;
+    background-color: lavenderblush;
+    height: 250px;
+    width: 250px;
+    margin: 2px;
+    border-radius: 10px;
 }
 footer {
     position: fixed;

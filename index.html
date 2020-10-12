@@ -10,39 +10,47 @@
 </head>
 <body>
     <header>
-        <h1>
-            <i class="fas fa-cloud-sun"></i> Weather Dashboard
+        <h1 class="header">
+            <i class="fas fa-cloud-sun"></i> Weather Dashboard 
         </h1>
+        <div id="date"></div>
     </header>
     <main>
       <div class="sidebar">
           <nav id="searchForm">
-            <form class="form-inline">
-                <input class="search" placeholder="Search for a City">
+            <form id="searchBar" class="form-inline">
+                <input id="searchInput" class="search" placeholder="Search for a City">
                 <button id="buttonSearch"><i id="icon" class="fas fa-search"></i></button>
             </form>
-            <ul id="recent">
-                <a href="#"><li></li></a>
-            </ul>
+            <div id="recent">
+            </div>
         </nav>
     </div>
-      <div class="articles">
+    <div class="articles">
         <article id="dayForcast" class="dayForcast">
         <div class="information">
             <div class="city"></div>
-            <div class="date"></div>
-            <div id=icon></div>
-            <div class="temp"></div>
-            <div class="humidity"></div>
-            <div class="wind"></div>
-            <div class="uv"></div>
+            <div class="important">
+                <img src="" id="iconW">
+                <div class="temp"></div>
+            </div>
+            <div class="less-important">
+                <div class="humidity"></div>
+                <div class="wind"></div>
+                <div class="uv"></div>
+            </div>
         </div>
-      </article>
-      <article id="fiveDayForcast" class="fiveDayForcast">
+        </article>
+        <div id="fiveDayForcast" class="fiveDayForcast">
+            <div class="fiveDays" id="today"></div>
+            <div class="fiveDays" id="tomorrow"></div>
+            <div class="fiveDays" id="theNextDay"></div>
+            <div class="fiveDays" id="theDayAfter"></div>
+            <div class="fiveDays" id="theDayAfterThat"></div>
+        </div>
+    </div>
 
-      </div>
-
-      </article>
+    
     </main>
     <footer id="footer">
         <p id="jokes">
@@ -50,6 +58,7 @@
         </p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript" src="scripts.js">
     
     </script>
