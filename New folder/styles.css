@@ -22,13 +22,12 @@ header {
 }
 /* SEARCH BAR */
 #searchForm {
-    position: relative;
     margin: auto;
+    width: 47%;
     border: solid palevioletred 3px;
     background-color: lavenderblush;
     margin-top: 20px;
     width: 350px;
-    height: 500px;
     border-radius: 10px;
 }
 form {
@@ -50,8 +49,6 @@ form {
     border-color: palevioletred;
 }
 #recent {
-    display: grid;
-    grid-template-columns: 1fr;
     padding: 10px;
 }
 
@@ -69,34 +66,10 @@ form {
     border: palevioletred;
     outline: palevioletred;
 }
-.clear-search{
-    position: absolute;
-    bottom: 0px;
-    left: 20px;
-    padding: 10px;
-    width: 300px;
-    height: 100px;
-    margin: 3px;
-    text-decoration: none;
-    list-style: none;
-    border-radius: 10px;
-    background-color: lavenderblush;
-    color: palevioletred;
-    font-size: 30px;
-    font-weight: bold;
-    border: solid 5px palevioletred;
-    outline: palevioletred;
-}
-
 /* DAY FORCAST */
-.articles {
-    position: relative;
-}
 .dayForcast {
-    position: absolute;
-    left: 100px;
+    margin: auto;
     margin-top: 20px;
-    width: 70%;
     height: 300px;
     background-color: mistyrose;
     border-radius: 20px;
@@ -113,47 +86,10 @@ form {
 .less-important {
     margin-left: 30px;
 }
-/* UV Index */ 
-.uvResult {
-    background-color: none;
-}
-.green {
-    border-radius: 5px;
-    background-color: green;
-    display: inline;
-    padding: 2px;
-}
-.yellow {
-    border-radius: 5px;
-    background-color: yellow;
-    display: inline;
-    padding: 2px;
-}
-.orange {
-    border-radius: 5px;
-    background-color: orange;
-    display: inline;
-    padding: 2px;
-}
-.red {
-    border-radius: 5px;
-    background-color: red;
-    display: inline;
-    padding: 2px;
-}
-.purple {
-    border-radius: 5px;
-    background-color: indigo;
-    display: inline;
-    padding: 2px;
-}
 /* 5 DAY FORCAST */
 .fiveDayForcast {
-    position: absolute;
     margin: auto;
-    left: 100px;
-    top: 350px;
-    width: 70%;
+    margin-top: 20px;
     height: 300px;
     background-color: mistyrose;
     border: solid mistyrose 10px;
@@ -164,26 +100,11 @@ form {
 }
 .fiveDays {
     display: inline-block;
-    background-color: palevioletred;
+    background-color: lavenderblush;
     height: 250px;
     width: 250px;
     margin: 2px;
     border-radius: 10px;
-}
-.five-dates {
-    padding: 10px;
-    margin-left: 10px;
-    text-align: left;
-    color: lavenderblush;
-}
-#iconZ {
-    float: right;
-    margin-right: 100px;
-}
-.five-temp,
-.five-humidity {
-    margin-left: 10px;
-    color: lavenderblush;
 }
 footer {
     position: fixed;
@@ -212,9 +133,6 @@ footer {
         border-bottom: none;
         border-left: none;
     }
-    .clear-search{
-        bottom: 100px
-    }
     form {
         margin-top: 30px;
     }
@@ -222,6 +140,7 @@ footer {
         /* padding-right: 100px; */
         grid-column: 2;
         grid-template-rows: 1fr 1fr;
+        max-width: 70%;
     }
     .dayForcast {
         /* grid-column: 2; */
@@ -235,9 +154,6 @@ footer {
 @media screen and (max-height: 400px) {
     #searchForm {
         min-height: 500px;
-    }
-    .clear-search{
-        bottom: 0px
     }
 }
 

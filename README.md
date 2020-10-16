@@ -1,46 +1,29 @@
-# 06 Server-Side APIs: Weather Dashboard
-
-Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
-
-Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that will provide basic setup and usage instructions. Use `localStorage` to store any persistent data.
-
-## User Story
-
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
-
-## Acceptance Criteria
-
-```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-WHEN I open the weather dashboard
-THEN I am presented with the last searched city forecast
-```
-
-The following image demonstrates the application functionality:
-
-![weather dashboard demo](./Assets/06-server-side-apis-homework-demo.png)
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+# Weather_Dashboard
+# Description
+    For this project we were asked to create a Weather Dashboard for an avid traveler. The idea was that when the person looked up a city they'd find the current and future information for that city.
+# HTML and CSS
+    For this project for the CSS I used media queries to make the page responsive. It has a view for small screens and mobile devices and changes once the screen is above a certain size.
+# Javascript/jQuery/APIs
+    START PROMPT
+    For this project onload it needed to come up with the last searched destination. In order to make this happen I used local storage. So when the page is loaded it pulls the last location from local storage to provide information for that place.
+    API
+    I pulled API information from open weather maps and added it to it's needed locations. So the dayUrl responds to the current situation. the fiveDayUrl responds to the five day forcast. Inside each of these functions it pulls the information and then places it in it's specific location. 
+    COLOR CHANGE
+    In order for the UV Index to change based on the number I added if else statements that depended on the number of the UV index value. If under 2 it came back with green. If over 8 it comes back red.
+    Local Storage
+    When a search is done, onclick, the information is saved to Local Storage and the search input is added to the recent section. 
+# Aids
+    This project was done using Open Weather Map APIs
+    https://openweathermap.org/
+    This project was done with research via jQuery website, the Open Weather Map website, W3Schools and MDN WebDocs
+    https://www.w3schools.com/jsref/prop_win_localstorage.asp
+    https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+    https://jquery.com/
+# Collaborators
+    While this was done individually it was done with instruction from Fil and Daniel.
+    https://github.com/c0dehot
+    https://github.com/shibeknight
+# Links
+The Links to the GITHUB site and the Live site are
+https://github.com/leahogorman/Weather-App
+https://leahogorman.github.io/Weather-App/
