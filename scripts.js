@@ -7,19 +7,21 @@ var currentDay = document.getElementById("date")
 var searchInput = document.getElementById("searchInput")
 var searchButton = document.getElementById("buttonSearch")
 
-// Variables
+// Forcast
 var dayForcast = document.getElementById("dayForcastParagraph")
 var fiveDayForcast = document.getElementById("fiveDayForcast")
+
+// Clear Button
 var clearBtn = document.getElementById("clear-search")
 
 // Update the Date
 var update = function() {
-  currentDayInfo = moment().format("(MM/DD/YY)");
+  currentDayInfo = moment().format("MM-DD-YYYY");
   currentDay.innerHTML = currentDayInfo;
 };
 setInterval(update, 1);
 
-
+// Get from Local Storage
 let searchTerms = localStorage.search ? JSON.parse(localStorage.search) : []
 function loadSearchTerms() {
   for(let i=0; i<searchTerms.length; i++) {
@@ -45,15 +47,18 @@ searchButton.addEventListener("click", function(event){
       getWeather(search)
 });
 
+// Side Bar Search
 function sideBarSearch( search ) {
  getWeather(search)
 }
 
-// Day Weather Results
+// Get Weather Function
 function getWeather( userInput ) {
 const dayUrl = `https://api.openweathermap.org/data/2.5/weather?q=` + userInput + `&units=metric&appid=` + (apiKey);
-const fiveDayUrl = `https://api.openweathermap.org/data/2.5/forecast?q=` + userInput + `&appid=fa75f7033f50639a7d544fa934ea0750`;
+const fiveDayUrl = `https://api.openweathermap.org/data/2.5/forecast?q=` + userInput + `&units=metric&appid=` + (apiKey);
 
+
+// Current Weather Function
 $.ajax({
     url: dayUrl,
     method: "GET"
@@ -67,8 +72,8 @@ $.ajax({
       $(".humidity").text("Humidity: " + response.main.humidity + "%");
       $(".wind").text("Wind Speed: " + response.wind.speed + "mph");
 
-      const currentWeather = response
-      console.log("hi there", response)
+
+// UV Index Function
       let lon = response.coord.lon;
       let lat = response.coord.lat;
       const uvUrl = `http://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=` + (apiKey);
@@ -78,27 +83,27 @@ $.ajax({
             method: "GET"
           })
             .then(function(response) {
-              $(".uv").html(response.value);
-
-              if (response.value < 3) {
+              $(".uv").text(response.value);
+              let uvIndex = response.value
+              $(".uv").removeClass("green")
+              $(".uv").removeClass("yellow")
+              $(".uv").removeClass("orange")
+              $(".uv").removeClass("red")
+              if (uvIndex < 3) {
                 $(".uv").addClass("green")
-              } else if (response.value >= 3 || response.value < 6) {
+              } else if (uvIndex < 6) {
                 $(".uv").addClass("yellow")
-              } else if (response.value >= 6 || response.value < 8) {
-                $(".uv").addClass("yellow")
-              } else if (response.value >= 8 || response.value < 11) {
+              } else if (uvIndex < 8) {
+                $(".uv").addClass("orange")
+              } else if (uvIndex < 11) {
                 $(".uv").addClass("red")
-              } else if (response.value >= 11) {
+              } else {
                 $(".uv").addClass("purple")
               }
-              $('.uv').wrap(`<div class=uvResult> UV Index: </div> `)
-
-
-
             });
-
     });
 
+// Five Day Forcast Function
     $.ajax({
       url: fiveDayUrl,
       method: "GET"
@@ -119,16 +124,15 @@ $.ajax({
             <h3 class="five-dates">${dateFinal}</h3>
             <img src="${iconUrl}" id="iconZ">
             <br><br><br>
-            <h6 class="five-temp">Temperature: ${temp}</h6>
-            <h6 class="five-humidity">Humidity: ${humidity}</h6>
+            <h6 class="five-temp">Temperature: ${temp} °C </h6>
+            <h6 class="five-humidity">Humidity: ${humidity}% </h6>
           </div>
            `); 
          } 
        });
-
-
   }
-  
+
+// Clear Local Storage Function
     function clearAll(){
       localStorage.clear();
       document.querySelector("#recent").innerHTML=""
