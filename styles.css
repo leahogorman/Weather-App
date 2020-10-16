@@ -114,7 +114,8 @@ form {
     margin-left: 30px;
 }
 /* UV Index */ 
-.uvResult {
+.uvWords {
+    display: none;
     background-color: none;
 }
 .green {
