@@ -109,6 +109,7 @@ $.ajax({
       method: "GET"
     })
       .then(function(response) {
+        $('#fiveDayForcast').text("");
         for(let i=0; i < response.list.length; i+=8 ) {
           let temp = response.list[i].main.temp;
           let iconCode = response.list[i].weather[0].icon;
