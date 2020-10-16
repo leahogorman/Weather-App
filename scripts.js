@@ -34,7 +34,6 @@ function loadSearchTerms() {
 // Ready Function
 $(document).ready(function(){
   loadSearchTerms()
-  document.getElementById("uvWords").style.display = "none";
 });
 
 // onClick Function Search
@@ -46,7 +45,6 @@ searchButton.addEventListener("click", function(event){
     document.querySelector("#recent").innerHTML+=`
               <button class="recent-search" onclick="sideBarSearch('${search}')">${search}</button>`
       getWeather(search)
-      document.getElementById("uvWords").style.display = "block";
 });
 
 // Side Bar Search
@@ -85,7 +83,7 @@ $.ajax({
             method: "GET"
           })
             .then(function(response) {
-              $(".uv").text(response.value);
+              $(".uv").text("UV Index: " + response.value);
               let uvIndex = response.value
               $(".uv").removeClass("green")
               $(".uv").removeClass("yellow")
